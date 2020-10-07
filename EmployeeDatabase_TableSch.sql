@@ -55,7 +55,7 @@ CREATE TABLE "titles" (
 );
 
 --Importing csv information into table
---used import csv function under Tables to check that tables will fill. 
+--used import csv function under Tables in pgAdmin to check that tables will fill. 
 
 ALTER TABLE "dept_emp" ADD CONSTRAINT "fk_dept_emp_emp_no" FOREIGN KEY("emp_no")
 REFERENCES "employees" ("emp_no");
