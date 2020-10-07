@@ -34,7 +34,7 @@ CREATE TABLE "employees" (
     "first_name" VARCHAR   NOT NULL,
     "last_name" VARCHAR   NOT NULL,
     "gender" VARCHAR   NOT NULL,
-    "hire_date" DATE   NOT NULL,
+    "date_hire" DATE   NOT NULL,
     CONSTRAINT "pk_employees" PRIMARY KEY (
         "emp_no"
      )
@@ -55,6 +55,7 @@ CREATE TABLE "titles" (
 );
 
 --Importing csv information into table
+--used import csv function under Tables to check that tables will fill. 
 
 ALTER TABLE "dept_emp" ADD CONSTRAINT "fk_dept_emp_emp_no" FOREIGN KEY("emp_no")
 REFERENCES "employees" ("emp_no");
@@ -73,17 +74,6 @@ REFERENCES "employees" ("emp_no");
 
 ALTER TABLE "titles" ADD CONSTRAINT "fk_titles_emp_no" FOREIGN KEY("emp_no")
 REFERENCES "employees" ("emp_no");
-
-INSERT INTO departments (dept_no, dept_name)
-VALUES ('d001', 'Marketing'),
-('d002', 'Finance'),
-('d003', 'Human Resources'),
-('d004', 'Production'),
-('d005', 'Development'),
-('d006', 'Quality Management'),
-('d007', 'Sales'),
-('d008', 'Research'),
-('d009', 'Customer Service');
 
 -- Display tables
 SELECT * FROM departments
